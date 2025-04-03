@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .main-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+        .container {
+            width: 300px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+            border-radius: 8px;
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 5px;
+        }
+        .image-container img {
+            width: 500px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="image-container">
+            <img src="https://img.freepik.com/free-photo/doctor-consulting-patient-clinic-office_23-2148941234.jpg" alt="Doctor with Patient">
+        </div>
+        <div class="container" id="login">
+            <img class="logo" src="https://img.freepik.com/free-vector/hospital-logo-design-vector-medical-cross_53876-136743.jpg" alt="Hospital Logo">
+            <h2>Login</h2>
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button onclick="loginUser()">Login</button>
+            <p>Don't have an account? <a href="#" onclick="toggleForm()">Sign up</a></p>
+        </div>
+
+        <div class="container" id="signup" style="display:none;">
+            <img class="logo" src="https://img.freepik.com/free-vector/hospital-logo-design-vector-medical-cross_53876-136743.jpg" alt="Hospital Logo">
+            <h2>Sign Up</h2>
+            <input type="text" id="signupName" placeholder="Name" required>
+            <input type="email" id="signupEmail" placeholder="Email" required>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <button onclick="registerUser()">Sign Up</button>
+            <p>Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            document.getElementById('login').style.display = 
+                document.getElementById('login').style.display === 'none' ? 'block' : 'none';
+            document.getElementById('signup').style.display = 
+                document.getElementById('signup').style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
